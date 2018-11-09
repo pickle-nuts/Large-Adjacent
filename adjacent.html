@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Largest Adjacent</title>
+	<script type="text/javascript">
+		/* 
+		- Create a function that adds a pair from an array
+		- Create a function that recognises the largest product of two numbers from an array
+		- Create a loop that checks this
+		- Create a var max that is taken from the last product made.
+		*/
+
+		function adjProduct(inputArray){
+		  return inputArray.reduce(function(acc, int, i, inputArray){
+		    if(inputArray.length > i + 1){
+		    return [
+		      ...acc,
+		      int * inputArray[i + 1]     
+		    ];
+		    }else{
+		      return acc;
+		    }
+		  }, []).reduce(function(acc, currentValue){
+		    return Math.max(acc, currentValue);
+		  });
+		}
+
+console.log(adjProduct([25, 56, 41, 45]))
+	</script>
+</head>
+<body>
+
+</body>
+</html>
